@@ -3,7 +3,7 @@ import {
   OwnershipTransferred as OwnershipTransferredEvent,
   Transfer as TransferEvent
 } from "../generated/pepe/pepe"
-import { Approval, OwnershipTransferred, Transfer } from "../generated/schema"
+import { Approval, OwnershipTransferred, Transfer, DailyVolume } from "../generated/schema"
 
 export function handleApproval(event: ApprovalEvent): void {
   let entity = new Approval(
@@ -49,4 +49,8 @@ export function handleTransfer(event: TransferEvent): void {
   entity.transactionHash = event.transaction.hash
 
   entity.save()
+}
+
+export function handleUpdateDailyVolume(): void {
+  //
 }

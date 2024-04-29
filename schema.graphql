@@ -26,3 +26,10 @@ type Transfer @entity(immutable: true) {
   blockTimestamp: BigInt!
   transactionHash: Bytes!
 }
+
+type DailyVolume @entity {
+  id: ID!
+  date: Int!
+  volume: BigInt!
+  transactionQuantity: Int!
+}
